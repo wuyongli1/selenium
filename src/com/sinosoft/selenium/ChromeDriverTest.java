@@ -34,7 +34,7 @@ public class ChromeDriverTest {
 		WebElement onlynum = driver.findElement(By.id("onlynum"));
 		onlynum.click();
 		Thread.sleep(300);
-		onlynum.sendKeys("°°É½");
+		onlynum.sendKeys("¹ğÁÖ");
 		Thread.sleep(1000);
 		WebElement country = driver.findElement(By.xpath("//*[@id=\"country_0\"]/a"));
 		country.click();
