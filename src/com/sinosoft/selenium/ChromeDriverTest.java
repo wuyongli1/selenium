@@ -13,40 +13,40 @@ public class ChromeDriverTest {
 	public static void main(String[] args) throws Exception {
 		// chromedrver2.35 chrome64 selenium3.9.1 jdk1.8
 		System.setProperty("webdriver.chrome.driver", "chromedriver2_35.exe");
-		// ³õÊ¼»¯driver
+		// åˆå§‹åŒ–driver
 		WebDriver driver = new ChromeDriver();
-		// ·ÃÎÊÈË±£ÊÖ»ú°æÊ×Ò³
+		// è®¿é—®äººä¿æ‰‹æœºç‰ˆé¦–é¡µ
 		driver.get("https://www.epicc.com.cn/m");
 		Thread.sleep(2000);
-		// ¶¨Î»µ½"Á¢¼´±¨¼Û"°´Å¥²¢µã»÷
+		// å®šä½åˆ°"ç«‹å³æŠ¥ä»·"æŒ‰é’®å¹¶ç‚¹å‡»
 		WebElement immediateOffer = driver.findElement(By.className("immediate-offer"));
 		immediateOffer.click();
 		Thread.sleep(2000);
-		// µã»÷Ñ¡ÔñĞĞÊ»³ÇÊĞ
+		// ç‚¹å‡»é€‰æ‹©è¡Œé©¶åŸå¸‚
 		driver.switchTo().frame("showIframecarIndexNew");
 		WebElement citynameS = driver.findElement(By.id("citynameS"));
 		citynameS.click();
 		Thread.sleep(2000);
 		/*
-		 * µã»÷ÊäÈë°°É½²¢Ñ¡Ôñ  ps×¢ÒâĞèÒªÇĞ»»µ½iframe
+		 * ç‚¹å‡»è¾“å…¥éå±±å¹¶é€‰æ‹©  psæ³¨æ„éœ€è¦åˆ‡æ¢åˆ°iframe
 		 */
 		driver.switchTo().frame("overPageIframe");
 		WebElement onlynum = driver.findElement(By.id("onlynum"));
 		onlynum.click();
 		Thread.sleep(300);
-		onlynum.sendKeys("¹ğÁÖ");
+		onlynum.sendKeys("æ¡‚æ—");
 		Thread.sleep(1000);
 		WebElement country = driver.findElement(By.xpath("//*[@id=\"country_0\"]/a"));
 		country.click();
 		Thread.sleep(1000);
 		/*
-		 * Ñ¡Ôñ³µÅÆ£¬ÊäÈëÊÖ»úºÅÂë²¢µã»÷»ñÈ¡ÑéÖ¤Âë
+		 * é€‰æ‹©è½¦ç‰Œï¼Œè¾“å…¥æ‰‹æœºå·ç å¹¶ç‚¹å‡»è·å–éªŒè¯ç 
 		 */
 		driver.switchTo().frame("showIframecarIndexNew");
-		//ÊÖ¶¯ÊäÈë³µÅÆ
+		//æ‰‹åŠ¨è¾“å…¥è½¦ç‰Œ
 		/*WebElement license = driver.findElement(By.id("license"));
 		license.sendKeys("A123");*/
-		//ĞÂ³µÎ´ÉÏÅÆ
+		//æ–°è½¦æœªä¸Šç‰Œ
 		WebElement inpu_checkbox = driver.findElement(By.id("inpu_checkbox"));
 		inpu_checkbox.click();
 		WebElement mobile_phone = driver.findElement(By.id("mobile_phone"));
@@ -59,11 +59,11 @@ public class ChromeDriverTest {
 	}
 
 	/*public static void switchToNewWindow(WebDriver driver) {
-		// µÃµ½µ±Ç°¾ä±ú
+		// å¾—åˆ°å½“å‰å¥æŸ„
 		String currentWindow = driver.getWindowHandle();
-		// µÃµ½ËùÓĞ´°¿ÚµÄ¾ä±ú
+		// å¾—åˆ°æ‰€æœ‰çª—å£çš„å¥æŸ„
 		Set<String> handles = driver.getWindowHandles();
-		// ÅÅ³ıµ±Ç°´°¿ÚµÄ¾ä±ú£¬ÔòÊ£ÏÂÊÇĞÂ´°¿Ú
+		// æ’é™¤å½“å‰çª—å£çš„å¥æŸ„ï¼Œåˆ™å‰©ä¸‹æ˜¯æ–°çª—å£
 		Iterator<String> it = handles.iterator();
 		while (it.hasNext()) {
 			if (currentWindow == it.next())
